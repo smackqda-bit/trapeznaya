@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #f7f4ee;
+  --color-paper: #ffffff;
+  --color-sand: #e8e2d6;
+  --color-ink: #141210;
+  --color-ink-soft: #2e2a25;
+  --color-body: #4a443c;
+  --color-muted: #6e675c;
+  --color-line: #dcd5c8;
+  --color-bronze: #7d6238;
+  --color-gold: #c8ae82;
+
+  --font-serif: "Cormorant", Georgia, "Times New Roman", serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+
+  --animate-snow: snow linear infinite;
+
+  @keyframes snow {
+    from {
+      transform: translateY(-20px);
+    }
+    to {
+      transform: translateY(820px);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ivory font-sans text-ink antialiased;
+  }
+  ::selection {
+    @apply bg-gold text-ink;
+  }
+}
+
+@utility eyebrow {
+  @apply text-xs font-medium tracking-[0.24em] text-bronze uppercase;
+}
+@utility heading {
+  @apply font-serif text-[clamp(40px,5vw,64px)] leading-[1.02] font-normal;
+}
+@utility btn-solid {
+  @apply inline-flex items-center justify-center bg-ink px-8 py-5 text-xs font-medium tracking-[0.18em] text-ivory uppercase transition-colors hover:bg-ink-soft;
+}
+@utility btn-ghost {
+  @apply inline-flex items-center justify-center border border-ink px-8 py-5 text-xs font-medium tracking-[0.18em] text-ink uppercase transition-colors hover:bg-ink hover:text-ivory;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-snow {
+    animation: none;
+    opacity: 0 !important;
+  }
+}
