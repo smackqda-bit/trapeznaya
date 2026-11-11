@@ -93,7 +93,8 @@ export function Gallery() {
                 aria-roledescription="слайд"
               >
                 <Photo
-                  label={s.title}
+                  label={`${s.title}. ${s.note}`}
+                  priority={i === 0}
                   image={s.image}
                   className="h-[clamp(320px,52vw,640px)]"
                   sizes="(min-width: 1280px) 1216px, 100vw"

@@ -1,4 +1,4 @@
-import { contacts, delivery, lunches, reviews, services } from "@/content";
+import { contacts, delivery, dishes, lunches, photos, reviews, services } from "@/content";
 import { LeadForm } from "./LeadForm";
 import { Photo } from "./Photo";
 
@@ -8,7 +8,20 @@ export function About() {
   return (
     <section id="about" className="scroll-mt-20">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-16 px-6 py-24 md:px-8 md:py-32">
-        <Photo label="интерьер" className="h-[420px] min-w-0 flex-[1_1_480px] md:h-[520px]" sizes="(min-width: 1024px) 50vw, 100vw" />
+        <div className="flex min-w-0 flex-[1_1_480px] items-start gap-4 md:gap-6">
+          <Photo
+            label="Вход в Трапезную Купца на Октябрьском проспекте"
+            image={photos.aboutEntrance}
+            className="aspect-[2/3] flex-1"
+            sizes="(min-width: 1024px) 25vw, 50vw"
+          />
+          <Photo
+            label="Вышитый рушник и икона в интерьере"
+            image={photos.aboutRushnyk}
+            className="mt-16 aspect-[2/3] flex-1 md:mt-24"
+            sizes="(min-width: 1024px) 25vw, 50vw"
+          />
+        </div>
         <div className="flex min-w-0 flex-[1_1_420px] flex-col gap-7">
           <span className="eyebrow">О нас</span>
           <h2 className="heading">Тепло русских традиций</h2>
@@ -40,13 +53,53 @@ export function Services() {
             Обсудить мероприятие →
           </a>
         </div>
-        <div className="grid border-t border-ink sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-x-6 border-t border-ink pt-10 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s, i) => (
-            <div key={s.title} className="flex flex-col gap-3 py-9 pr-8">
+            <div key={s.title} className="group flex flex-col gap-3 pb-10">
+              <Photo
+                label={s.title}
+                image={s.image}
+                zoom
+                className="mb-3 aspect-[4/3] sm:aspect-[4/5]"
+                sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
+              />
               <span className="font-serif text-xl text-bronze">{roman[i]}</span>
               <h3 className="font-serif text-[28px] font-medium">{s.title}</h3>
               <p className="text-sm leading-[1.7] font-light text-body">{s.text}</p>
             </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function Kitchen() {
+  return (
+    <section id="kitchen" className="scroll-mt-20 border-t border-line">
+      <div className="mx-auto flex max-w-7xl flex-col gap-14 px-6 py-24 md:px-8 md:py-32">
+        <div className="flex flex-wrap items-end justify-between gap-x-16 gap-y-6">
+          <div className="flex flex-col gap-5">
+            <span className="eyebrow">Кухня</span>
+            <h2 className="heading">Готовим каждый день</h2>
+          </div>
+          <p className="max-w-[380px] text-[15px] leading-[1.75] font-light text-body">
+            Супы, горячее, свежая выпечка и десерты — по домашним рецептам, из свежих продуктов.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:gap-x-6 lg:grid-cols-3">
+          {dishes.map((d) => (
+            <figure key={d.title} className="group m-0 flex flex-col gap-4">
+              <Photo
+                label={d.title}
+                image={d.image}
+                position={d.position}
+                zoom
+                className="aspect-[4/3]"
+                sizes="(min-width: 1024px) 400px, 50vw"
+              />
+              <figcaption className="font-serif text-xl leading-tight md:text-2xl">{d.title}</figcaption>
+            </figure>
           ))}
         </div>
       </div>

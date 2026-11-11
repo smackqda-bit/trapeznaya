@@ -27,8 +27,16 @@ export type NewsItem = {
   text: string;
 };
 
+export const photos = {
+  hero: "/photos/hero-banquet.jpg",
+  aboutEntrance: "/photos/about-entrance.jpg",
+  aboutRushnyk: "/photos/about-rushnyk.jpg",
+};
+
 export const news = {
   corporate: {
+    image: "/photos/news-corporate.jpg",
+    imageAlt: "Банкетный стол, накрытый к празднику",
     tag: "Корпоративы",
     title: "Новогодние корпоративы с шоу-программой",
     text: "Праздничный банкет, шоу-программа и ведущий. Уютный зал, домашняя кухня и атмосфера настоящего купеческого застолья.",
@@ -36,11 +44,15 @@ export const news = {
     priceNote: "за одного человека",
   },
   salads: {
+    image: "/photos/news-olivier.jpg",
+    imageAlt: "Салат оливье",
     tag: "Кулинария",
     title: "Новогодние салаты на заказ",
     text: "Приготовим любимые новогодние салаты к вашему столу — из свежих продуктов, по домашним рецептам, к удобному времени.",
   },
   vk: {
+    image: "/photos/news-gift.jpg",
+    imageAlt: "Букет пионов на витрине",
     tag: "Акция",
     title: "Приз за подписку во ВКонтакте",
     text: "Подпишитесь на наше сообщество во ВКонтакте и покажите подписку на кассе — вручим вам подарок от «Трапезной Купца».",
@@ -51,19 +63,27 @@ export const news = {
 export type Slide = { title: string; note: string; image?: string };
 
 export const gallery: Slide[] = [
-  { title: "Главный зал", note: "Купеческий интерьер в центре Пскова" },
-  { title: "Новогодний декор", note: "Ёлка, огни и праздничная сервировка" },
-  { title: "Банкетный зал", note: "Корпоративы, юбилеи и семейные праздники" },
-  { title: "Домашняя кухня", note: "Горячие обеды каждый день" },
-  { title: "Пекарня", note: "Свежая выпечка и десерты" },
-  { title: "Новогодние салаты", note: "Готовим на заказ к вашему столу" },
+  { title: "Зал", note: "Купеческий интерьер в центре Пскова", image: "/photos/gallery-hall.jpg" },
+  { title: "Витрина", note: "Чай, кофе, свежая выпечка и десерты", image: "/photos/gallery-counter.jpg" },
+  { title: "Детали", note: "Самовар, старинный фарфор и народные мотивы", image: "/photos/gallery-wall.jpg" },
+  { title: "Вход", note: "Октябрьский проспект, 33", image: "/photos/gallery-facade.jpg" },
 ];
 
 export const services = [
-  { title: "Домашняя кухня", text: "Вкусно, сытно и по-домашнему каждый день" },
-  { title: "Пекарня-кондитерская", text: "Свежая выпечка и десерты каждый день" },
-  { title: "Кейтеринг", text: "Выездное обслуживание мероприятий любого формата" },
-  { title: "Банкетный зал", text: "Праздники, юбилеи, свадьбы и корпоративы в уютной атмосфере" },
+  { title: "Домашняя кухня", text: "Вкусно, сытно и по-домашнему каждый день", image: "/photos/service-kitchen.jpg" },
+  { title: "Пекарня-кондитерская", text: "Свежая выпечка и десерты каждый день", image: "/photos/service-bakery.jpg" },
+  { title: "Кейтеринг", text: "Выездное обслуживание мероприятий любого формата", image: "/photos/service-catering.jpg" },
+  { title: "Банкетный зал", text: "Праздники, юбилеи, свадьбы и корпоративы в уютной атмосфере", image: "/photos/service-banquet.jpg" },
+];
+
+// Блок «Кухня»: названия блюд можно поправить под ваше меню
+export const dishes = [
+  { title: "Домашний суп", image: "/photos/dish-soup.jpg" },
+  { title: "Котлета с гречкой", image: "/photos/dish-cutlet.jpg" },
+  { title: "Мясо в томатном соусе с рисом", image: "/photos/dish-stew.jpg" },
+  { title: "Меренговый рулет", image: "/photos/dish-meringue.jpg" },
+  { title: "Пирожное «Яблочко»", image: "/photos/dish-apples.jpg" },
+  { title: "Свежий кофе", image: "/photos/dish-coffee.jpg", position: "50% 62%" },
 ];
 
 export const lunches = [

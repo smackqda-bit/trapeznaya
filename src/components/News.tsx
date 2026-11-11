@@ -1,28 +1,43 @@
 import { contacts, news } from "@/content";
 import type { ReactNode } from "react";
+import { Photo } from "./Photo";
 
 function NewsRow({
   index,
+  image,
+  imageAlt,
   tag,
   title,
   text,
   aside,
 }: {
   index: string;
+  image: string;
+  imageAlt: string;
   tag: string;
   title: string;
   text: string;
   aside: ReactNode;
 }) {
   return (
-    <article className="flex flex-wrap items-start gap-x-12 gap-y-6 border-b border-line py-12 transition-colors hover:bg-ivory md:px-4">
-      <span className="flex-[0_0_72px] font-serif text-[28px] text-bronze">{index}</span>
-      <div className="flex min-w-0 flex-[1_1_380px] flex-col gap-3.5">
-        <span className="text-[11px] font-medium tracking-[0.22em] text-muted uppercase">{tag}</span>
+    <article className="group flex flex-wrap items-start gap-x-10 gap-y-6 border-b border-line py-12 md:px-4">
+      <span className="flex-[0_0_48px] font-serif text-[28px] text-bronze max-sm:hidden">{index}</span>
+      <Photo
+        label={imageAlt}
+        image={image}
+        zoom
+        className="aspect-[4/3] w-full sm:aspect-[4/5] sm:w-44 sm:flex-none lg:w-52"
+        sizes="(min-width: 1024px) 208px, (min-width: 640px) 176px, 100vw"
+      />
+      <div className="flex min-w-0 flex-[1_1_320px] flex-col gap-3.5">
+        <span className="text-[11px] font-medium tracking-[0.22em] text-muted uppercase">
+          <span className="text-bronze sm:hidden">{index} · </span>
+          {tag}
+        </span>
         <h3 className="font-serif text-[clamp(32px,3.4vw,40px)] leading-[1.05] font-medium">{title}</h3>
         <p className="max-w-[560px] text-[15px] leading-[1.75] font-light text-body">{text}</p>
       </div>
-      <div className="flex min-w-0 flex-[0_1_260px] flex-col items-start gap-5">{aside}</div>
+      <div className="flex min-w-0 flex-[0_1_240px] flex-col items-start gap-5">{aside}</div>
     </article>
   );
 }

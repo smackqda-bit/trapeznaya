@@ -1,3 +1,4 @@
+import { photos } from "@/content";
 import { Photo } from "./Photo";
 
 const flakes = [
@@ -57,8 +58,10 @@ export function Hero() {
         </div>
 
         <Photo
-          label="праздничный зал"
-          className="min-h-[420px] min-w-0 flex-[1_1_420px] md:min-h-[560px]"
+          label="Праздничный банкетный стол в Трапезной Купца"
+          image={photos.hero}
+          position="50% 40%"
+          className="min-h-[460px] min-w-0 flex-[1_1_420px] md:min-h-[600px]"
           sizes="(min-width: 1024px) 45vw, 100vw"
           priority
         />
