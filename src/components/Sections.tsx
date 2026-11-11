@@ -13,13 +13,13 @@ export function About() {
             label="Вход в Трапезную Купца на Октябрьском проспекте"
             image={photos.aboutEntrance}
             className="aspect-[2/3] flex-1"
-            sizes="(min-width: 1024px) 25vw, 50vw"
+            sizes="(min-width: 1180px) 25vw, 50vw"
           />
           <Photo
             label="Вышитый рушник и икона в интерьере"
             image={photos.aboutRushnyk}
             className="mt-16 aspect-[2/3] flex-1 md:mt-24"
-            sizes="(min-width: 1024px) 25vw, 50vw"
+            sizes="(min-width: 1180px) 25vw, 50vw"
           />
         </div>
         <div className="flex min-w-0 flex-[1_1_420px] flex-col gap-7">
@@ -61,7 +61,11 @@ export function Services() {
                 image={s.image}
                 zoom
                 className="mb-3 aspect-[4/3] sm:aspect-[4/5]"
-                sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
+                sizes={
+                  "wide" in s && s.wide
+                    ? "(min-width: 1024px) 560px, (min-width: 640px) 95vw, 115vw"
+                    : "(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
+                }
               />
               <span className="font-serif text-xl text-bronze">{roman[i]}</span>
               <h3 className="font-serif text-[28px] font-medium">{s.title}</h3>
@@ -96,7 +100,7 @@ export function Kitchen() {
                 position={d.position}
                 zoom
                 className="aspect-[4/3]"
-                sizes="(min-width: 1024px) 400px, 50vw"
+                sizes="(min-width: 1024px) 460px, 60vw"
               />
               <figcaption className="font-serif text-xl leading-tight md:text-2xl">{d.title}</figcaption>
             </figure>

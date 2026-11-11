@@ -62,7 +62,7 @@ export function Hero() {
           image={photos.hero}
           position="50% 40%"
           className="min-h-[460px] min-w-0 flex-[1_1_420px] md:min-h-[600px]"
-          sizes="(min-width: 1024px) 45vw, 100vw"
+          sizes="(min-width: 1180px) 45vw, 100vw"
           priority
         />
       </div>

@@ -23,7 +23,7 @@ export function Photo({ label, image, className = "", sizes = "100vw", priority,
           fill
           sizes={sizes}
           priority={priority}
-          quality={80}
+          quality={85}
           draggable={false}
           className={`object-cover ${zoom ? "transition-transform duration-700 ease-out group-hover:scale-[1.04]" : ""}`}
           style={position ? { objectPosition: position } : undefined}

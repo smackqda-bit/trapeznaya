@@ -97,7 +97,7 @@ export function Gallery() {
                   priority={i === 0}
                   image={s.image}
                   className="h-[clamp(320px,52vw,640px)]"
-                  sizes="(min-width: 1280px) 1216px, 100vw"
+                  sizes="(min-width: 1280px) 1410px, (min-width: 640px) 120vw, 180vw"
                 />
                 <figcaption className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
                   <span className="font-serif text-[28px]">{s.title}</span>

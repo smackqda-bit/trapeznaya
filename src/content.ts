@@ -70,8 +70,9 @@ export const gallery: Slide[] = [
 ];
 
 export const services = [
-  { title: "Домашняя кухня", text: "Вкусно, сытно и по-домашнему каждый день", image: "/photos/service-kitchen.jpg" },
-  { title: "Пекарня-кондитерская", text: "Свежая выпечка и десерты каждый день", image: "/photos/service-bakery.jpg" },
+  // wide: горизонтальное фото — в вертикальной карточке его нужно грузить крупнее, иначе будет мыло
+  { title: "Домашняя кухня", text: "Вкусно, сытно и по-домашнему каждый день", image: "/photos/service-kitchen.jpg", wide: true },
+  { title: "Пекарня-кондитерская", text: "Свежая выпечка и десерты каждый день", image: "/photos/service-bakery.jpg", wide: true },
   { title: "Кейтеринг", text: "Выездное обслуживание мероприятий любого формата", image: "/photos/service-catering.jpg" },
   { title: "Банкетный зал", text: "Праздники, юбилеи, свадьбы и корпоративы в уютной атмосфере", image: "/photos/service-banquet.jpg" },
 ];
